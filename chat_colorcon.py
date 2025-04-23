@@ -9,18 +9,23 @@ st.caption("Chat with your AI Agent connected to your knowledge and data sources
 # --- SESSION STATE INIT ---
 if "messages" not in st.session_state:
     st.session_state.messages = []
-if "access_key" not in st.session_state:
-    st.session_state.access_key = ""
-if "token" not in st.session_state:
-    st.session_state.token = ""
+# if "access_key" not in st.session_state:
+#     st.session_state.access_key = ""
+# if "token" not in st.session_state:
+#     st.session_state.token = ""
 
 # --- SIDEBAR OR CONFIG PANEL ---
-with st.expander("🔐 Agent Configuration", expanded=False):
-    st.session_state.access_key = st.text_input("Access Key", value=st.session_state.access_key, type="password")
-    st.session_state.token = st.text_area("Bearer Token", value=st.session_state.token, height=100)
+# with st.expander("🔐 Agent Configuration", expanded=False):
+#     st.session_state.access_key = st.text_input("Access Key", value=st.session_state.access_key, type="password")
+#     st.session_state.token = st.text_area("Bearer Token", value=st.session_state.token, height=100)
 
 # --- AGENT CONFIG ---
 API_URL = "https://mira-demo.miraclesoft.ai/api/modelVsModel?environment=agent&projectId=BA39374A-9861-4DF0-BA6A-D2AFE54678BE"
+HEADERS = {
+    "access-key": "920eb7d2db26622b1147ddc613d510c1",
+    "Content-Type": "application/json",
+    "token": ""
+}
 AGENT_ID = "BA39374A-9861-4DF0-BA6A-D2AFE54678BE"
 
 # --- FUNCTION TO SEND QUERY TO AGENT ---
