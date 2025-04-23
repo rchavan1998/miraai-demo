@@ -95,9 +95,13 @@ if user_input:
     with st.spinner("Thinking..."):
         try:
             agent_reply = query_agent(user_input)
-            reply_content = agent_reply[0] if isinstance(agent_reply, list) else str(agent_reply)
+            try:    
+                reply_content = agent_reply["results"][0]["value"]["FinalResponse"]["response"]
+            except Exception as e:
+                reply_content = f" Error parsing response: {str(e)}"
+
         except Exception as e:
-            reply_content = f"❌ Error: {str(e)}"
+            reply_content = f" Error: {str(e)}"
 
     st.session_state.messages.append({"role": "assistant", "content": reply_content})
     with st.chat_message("assistant"):
