@@ -101,7 +101,8 @@ if user_input:
         try:
             agent_reply = query_agent(user_input)
             try:    
-                reply_content = agent_reply["results"][0]["value"]["FinalResponse"]["response"]
+                # reply_content = agent_reply["results"][0]["value"]["FinalResponse"]["response"]
+                 reply_content = agent_reply["results"][0]   
             except Exception as e:
                 reply_content = f" Error parsing response: {str(e)}"
 
