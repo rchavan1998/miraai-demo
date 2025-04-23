@@ -30,11 +30,11 @@ AGENT_ID = "BA39374A-9861-4DF0-BA6A-D2AFE54678BE"
 
 # --- FUNCTION TO SEND QUERY TO AGENT ---
 def query_agent(user_query):
-    headers = {
-        "access-key": st.session_state.access_key,
-        "Content-Type": "application/json",
-        "token": st.session_state.token
-    }
+    # headers = {
+    #     "access-key": st.session_state.access_key,
+    #     "Content-Type": "application/json",
+    #     "token": st.session_state.token
+    # }
 
     payload = [{
         "query": user_query,
@@ -78,7 +78,7 @@ def query_agent(user_query):
             }
         ]
     }]
-    response = requests.post(API_URL, headers=headers, json=payload)
+    response = requests.post(API_URL, headers=HEADERS, json=payload)
     return response.json()
 
 # --- STARTING MESSAGE ---
