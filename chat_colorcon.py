@@ -26,7 +26,7 @@ HEADERS = {
     "Content-Type": "application/json",
     "token": ""
 }
-AGENT_ID = "BA39374A-9861-4DF0-BA6A-D2AFE54678BE"
+AGENT_ID = "46A5032C-9D1F-4F62-8CD6-3B16CA7EC3C5"
 
 # --- FUNCTION TO SEND QUERY TO AGENT ---
 def query_agent(user_query):
@@ -61,20 +61,20 @@ def query_agent(user_query):
         },
         "sources": [
             {
-                "Id": "B9B1435D-F86C-4477-9189-5E212FE11FC4",
-                "AgentId": AGENT_ID,
-                "Description": "Colorcon coatings like Acryl-EZE, Opadry, Opatint...",
-                "Name": "Colorcon Product Brochures",
+                "Id": "3C274A26-55FA-483C-AA1C-7370E90DCD4F",
+                "AgentId": "46A5032C-9D1F-4F62-8CD6-3B16CA7EC3C5",
+                "Description": "Knowledge related to Colorcon's products using public product brochures and spec sheets available from their website(https://www.colorcon.com/)",
+                "Source": "KS",
                 "ProjectId": "34BBC4CE-F6DA-4FD5-9A4F-064A7946765E",
-                "Source": "KS"
+                "Name": "Colorcon Product Brochures"
             },
             {
-                "Id": "583A332A-5D5E-4093-8646-C2654F3FC383",
-                "AgentId": AGENT_ID,
-                "ConnectionId": "677E89D8-38DA-4F3C-AD3B-6916A50173A1",
-                "Description": "Database for inventory, sales, and orders",
-                "Name": "Colorcon Data",
-                "Source": "DS"
+                "Id": "D13B2D81-EDFA-4F72-A6CA-D30D0F0634EC",
+                "AgentId": "46A5032C-9D1F-4F62-8CD6-3B16CA7EC3C5",
+                "Description": "The order-assist table in the datasphere is essential for managing and tracking customer orders, detailing key information such as order statuses, product details, shipping instructions, payment methods, and delivery timelines to ensure a smooth order fulfillment process.",
+                "Source": "DS",
+                "ConnectionId": "F616BCC3-FBE0-47BD-9172-AD02D6B1C31F",
+                "Name": "Order Assist"
             }
         ]
     }]
